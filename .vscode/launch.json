@@ -1,0 +1,63 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+
+
+    ]#include <stdio.h>
+#include <string.h>
+
+int main(int argc, char const *argv[])
+{
+    int carta;
+    char estado_codigo[3];
+    char cidade[50];
+    int populacao;
+    float area;
+    float pib;
+    int pontos_turisticos;
+    char escolha[4];  // Para armazenar a escolha "Sim"
+
+    printf("\nDeseja começar o cadastro de Cartas para o nosso Super Trunfo? ");
+    scanf("%s", escolha);  // Lê uma string
+
+    if (strcmp(escolha, "Sim") == 0)  // Compara strings
+    {
+        for (carta = 0; carta < 2; carta++)  
+        {
+            printf("\nEscolha o estado e o código que deseja inserir na carta (escolha entre as letras A à H): ");
+            scanf("%s", estado_codigo);  // Lê o código do estado
+
+            printf("\nEscolha o nome da cidade: ");
+            scanf(" %[^\n]%*c", cidade);  // Lê uma string com espaços
+
+            printf("\nDigite a quantidade de habitantes dessa cidade: ");
+            scanf("%d", &populacao);
+
+            printf("\nDigite o tamanho dessa cidade em sua área total: ");
+            scanf("%f", &area);
+
+            printf("\nQual o PIB total da cidade? (em reais): ");
+            scanf("%f", &pib);
+
+            printf("\nQuantos pontos turísticos tem essa cidade? ");
+            scanf("%d", &pontos_turisticos);
+
+            printf("\n--------------------SUPER TRUNFO--------------------");
+            printf("\nCarta: %d", carta + 1);  // Mostrar o número da carta (1 ou 2)
+            printf("\nEstado: %s", estado_codigo);
+            printf("\nNome da cidade: %s", cidade);
+            printf("\nPopulação: %d", populacao);
+            printf("\nÁrea: %.2f km²", area);
+            printf("\nPIB: R$ %.2f", pib);
+            printf("\nNúmero de pontos turísticos: %d", pontos_turisticos);
+            printf("\n------------------------------------------------------\n");
+        }
+    }
+
+    return 0;
+}
+}
